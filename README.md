@@ -7,7 +7,7 @@
 
 ## Example
 
-An iOS view-controller navigation management. No inherit, use one line code to integrate.
+An iOS view-controller navigation management. No inherit, using one line code to integrate.
 
 ---
 
