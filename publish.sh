@@ -86,7 +86,7 @@ printRed "开始发布 $filename 版本 $version 到 kugou-ios-kgspecs"
 # 清除缓存
 printRed cache clean --all
 
-pod repo push kugou-ios-kgspecs "${podspec_name}" --allow-warnings --use-libraries --verbose --skip-import-validation --sources=https://github.com/CocoaPods/Specs.git
+pod repo push master "${podspec_name}" --allow-warnings --use-libraries --verbose --skip-import-validation --sources=https://github.com/CocoaPods/Specs.git
 
 if [ $? -ne 0 ]; then
     printRed "发布 $filename 版本 $version 失败"
@@ -97,7 +97,7 @@ printRed "发布 $filename 版本 $version 到 kugou-ios-kgspecs 结束\n"
 
 if [[ $need_pack == true ]]; then
     printRed "开始打包 framework"
-    pod package ${podspec_name} --no-mangle --exclude-deps --force --spec-sources=http://mgit.kugou.net/iOS/KGSpecs.git,https://github.com/CocoaPods/Specs.git
+    pod package ${podspec_name} --no-mangle --exclude-deps --force --spec-sources=https://github.com/CocoaPods/Specs.git
 
     if [ $? -ne 0 ]; then
         printRed "打包 framework失败"
