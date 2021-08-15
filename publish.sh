@@ -82,18 +82,18 @@ git tag -a $version -m "$version"
 git push origin --tags
 printRed "提交及推送代码、tags 结束\n"
 
-printRed "开始发布 $filename 版本 $version 到 kugou-ios-kgspecs"
+printRed "开始发布 $filename 版本 $version 到 Cocoapods"
 # 清除缓存
 printRed cache clean --all
 
-pod trunk push master "${podspec_name}" --allow-warnings --use-libraries --verbose --skip-import-validation --sources=https://github.com/CocoaPods/Specs.git
+pod trunk push "${podspec_name}" --allow-warnings --skip-import-validation
 
 if [ $? -ne 0 ]; then
     printRed "发布 $filename 版本 $version 失败"
     exit 1
 fi
 
-printRed "发布 $filename 版本 $version 到 kugou-ios-kgspecs 结束\n"
+printRed "发布 $filename 版本 $version 到 Cocoapods 结束\n"
 
 if [[ $need_pack == true ]]; then
     printRed "开始打包 framework"
