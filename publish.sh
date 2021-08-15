@@ -86,7 +86,7 @@ printRed "开始发布 $filename 版本 $version 到 kugou-ios-kgspecs"
 # 清除缓存
 printRed cache clean --all
 
-pod repo push master "${podspec_name}" --allow-warnings --use-libraries --verbose --skip-import-validation --sources=https://github.com/CocoaPods/Specs.git
+pod trunk push master "${podspec_name}" --allow-warnings --use-libraries --verbose --skip-import-validation --sources=https://github.com/CocoaPods/Specs.git
 
 if [ $? -ne 0 ]; then
     printRed "发布 $filename 版本 $version 失败"
