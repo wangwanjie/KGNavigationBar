@@ -55,11 +55,11 @@ function helpFunction() {
 
 while getopts :p opt; do
     case "$opt" in
-    p)
-        need_pack=true
-        printRed "需要打包"
+        p)
+            need_pack=true
+            printRed "需要打包"
         ;;
-    ?) helpFunction ;;
+        ?) helpFunction ;;
     esac
 done
 
@@ -83,8 +83,6 @@ git push origin --tags
 printRed "提交及推送代码、tags 结束\n"
 
 printRed "开始发布 $filename 版本 $version 到 Cocoapods"
-# 清除缓存
-printRed cache clean --all
 
 pod trunk push "${podspec_name}" --allow-warnings --skip-import-validation
 
@@ -96,6 +94,10 @@ fi
 printRed "发布 $filename 版本 $version 到 Cocoapods 结束\n"
 
 if [[ $need_pack == true ]]; then
+    # 清除缓存
+    printRed "清除缓存"
+    pod cache clean --all
+
     printRed "开始打包 framework"
     pod package ${podspec_name} --no-mangle --exclude-deps --force --spec-sources=https://github.com/CocoaPods/Specs.git
 
