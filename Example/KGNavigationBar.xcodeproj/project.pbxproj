@@ -22,6 +22,7 @@
 		6003F5BA195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5B8195388D20070C39A /* InfoPlist.strings */; };
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
 		71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */; };
+		95B7501326E5BB39004E7684 /* PresentStyleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95B7501126E5BB39004E7684 /* PresentStyleViewController.m */; };
 		95FC124726C93F6E0003C5C7 /* BaseTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95FC123226C93F6E0003C5C7 /* BaseTabBarViewController.m */; };
 		95FC124826C93F6E0003C5C7 /* NoneFullScreenGestureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95FC123426C93F6E0003C5C7 /* NoneFullScreenGestureViewController.m */; };
 		95FC124926C93F6E0003C5C7 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95FC123526C93F6E0003C5C7 /* BaseViewController.m */; };
@@ -69,6 +70,8 @@
 		6131CEDFB5CACC26D8B61AAB /* KGNavigationBar.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = KGNavigationBar.podspec; path = ../KGNavigationBar.podspec; sourceTree = "<group>"; };
 		71719F9E1E33DC2100824A3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7C6FD40EEDBF529807099E6D /* Pods-KGNavigationBar_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KGNavigationBar_Example.release.xcconfig"; path = "Target Support Files/Pods-KGNavigationBar_Example/Pods-KGNavigationBar_Example.release.xcconfig"; sourceTree = "<group>"; };
+		95B7501126E5BB39004E7684 /* PresentStyleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PresentStyleViewController.m; sourceTree = "<group>"; };
+		95B7501226E5BB39004E7684 /* PresentStyleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PresentStyleViewController.h; sourceTree = "<group>"; };
 		95FC123126C93F6E0003C5C7 /* HideNavigationBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HideNavigationBarViewController.h; sourceTree = "<group>"; };
 		95FC123226C93F6E0003C5C7 /* BaseTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTabBarViewController.m; sourceTree = "<group>"; };
 		95FC123326C93F6E0003C5C7 /* NoneEdgePopGestureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoneEdgePopGestureViewController.h; sourceTree = "<group>"; };
@@ -100,9 +103,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */,
-				6003F592195388D20070C39A /* UIKit.framework in Frameworks */,
 				6003F58E195388D20070C39A /* Foundation.framework in Frameworks */,
 				03D6D96C22C9197A40738404 /* Pods_KGNavigationBar_Example.framework in Frameworks */,
+				6003F592195388D20070C39A /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -110,10 +113,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6003F5B0195388D20070C39A /* XCTest.framework in Frameworks */,
-				6003F5B2195388D20070C39A /* UIKit.framework in Frameworks */,
 				6003F5B1195388D20070C39A /* Foundation.framework in Frameworks */,
 				5A32E9538FE22A58BF931E81 /* Pods_KGNavigationBar_Tests.framework in Frameworks */,
+				6003F5B2195388D20070C39A /* UIKit.framework in Frameworks */,
+				6003F5B0195388D20070C39A /* XCTest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -144,12 +147,12 @@
 		6003F58C195388D20070C39A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				6003F58D195388D20070C39A /* Foundation.framework */,
 				6003F58F195388D20070C39A /* CoreGraphics.framework */,
-				6003F591195388D20070C39A /* UIKit.framework */,
-				6003F5AF195388D20070C39A /* XCTest.framework */,
+				6003F58D195388D20070C39A /* Foundation.framework */,
 				4035EEBD94518056841EA04F /* Pods_KGNavigationBar_Example.framework */,
 				0860CA953C4E296E1115A2A1 /* Pods_KGNavigationBar_Tests.framework */,
+				6003F591195388D20070C39A /* UIKit.framework */,
+				6003F5AF195388D20070C39A /* XCTest.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -159,14 +162,14 @@
 			children = (
 				95FC123026C93F6E0003C5C7 /* Controller */,
 				95FC124426C93F6E0003C5C7 /* Model */,
+				6003F594195388D20070C39A /* Supporting Files */,
 				95FC124326C93F6E0003C5C7 /* View */,
+				6003F5A8195388D20070C39A /* Images.xcassets */,
 				6003F59C195388D20070C39A /* KGAppDelegate.h */,
 				6003F59D195388D20070C39A /* KGAppDelegate.m */,
 				95FC123726C93F6E0003C5C7 /* KGViewController.h */,
 				95FC123D26C93F6E0003C5C7 /* KGViewController.m */,
 				71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */,
-				6003F5A8195388D20070C39A /* Images.xcassets */,
-				6003F594195388D20070C39A /* Supporting Files */,
 			);
 			name = "Example for KGNavigationBar";
 			path = KGNavigationBar;
@@ -175,10 +178,10 @@
 		6003F594195388D20070C39A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				6003F595195388D20070C39A /* KGNavigationBar-Info.plist */,
 				6003F596195388D20070C39A /* InfoPlist.strings */,
-				6003F599195388D20070C39A /* main.m */,
+				6003F595195388D20070C39A /* KGNavigationBar-Info.plist */,
 				6003F59B195388D20070C39A /* KGNavigationBar-Prefix.pch */,
+				6003F599195388D20070C39A /* main.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -186,8 +189,8 @@
 		6003F5B5195388D20070C39A /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				6003F5BB195388D20070C39A /* Tests.m */,
 				6003F5B6195388D20070C39A /* Supporting Files */,
+				6003F5BB195388D20070C39A /* Tests.m */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -195,8 +198,8 @@
 		6003F5B6195388D20070C39A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				6003F5B7195388D20070C39A /* Tests-Info.plist */,
 				6003F5B8195388D20070C39A /* InfoPlist.strings */,
+				6003F5B7195388D20070C39A /* Tests-Info.plist */,
 				606FC2411953D9B200FFA9A0 /* Tests-Prefix.pch */,
 			);
 			name = "Supporting Files";
@@ -205,9 +208,9 @@
 		60FF7A9C1954A5C5007DD14C /* Podspec Metadata */ = {
 			isa = PBXGroup;
 			children = (
+				13B4B5B44A3C9F7B11818A22 /* LICENSE */,
 				6131CEDFB5CACC26D8B61AAB /* KGNavigationBar.podspec */,
 				A992C697257204C8A8B05422 /* README.md */,
-				13B4B5B44A3C9F7B11818A22 /* LICENSE */,
 			);
 			name = "Podspec Metadata";
 			sourceTree = "<group>";
@@ -227,6 +230,8 @@
 				95FC123A26C93F6E0003C5C7 /* NoneEdgePopGestureViewController.m */,
 				95FC123F26C93F6E0003C5C7 /* NoneFullScreenGestureViewController.h */,
 				95FC123426C93F6E0003C5C7 /* NoneFullScreenGestureViewController.m */,
+				95B7501226E5BB39004E7684 /* PresentStyleViewController.h */,
+				95B7501126E5BB39004E7684 /* PresentStyleViewController.m */,
 				95FC123626C93F6E0003C5C7 /* SecondViewController.h */,
 				95FC123E26C93F6E0003C5C7 /* SecondViewController.m */,
 				95FC123926C93F6E0003C5C7 /* ThirdViewController.h */,
@@ -347,9 +352,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */,
 				6003F5A9195388D20070C39A /* Images.xcassets in Resources */,
 				6003F598195388D20070C39A /* InfoPlist.strings in Resources */,
+				71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -451,18 +456,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				95FC124D26C93F6F0003C5C7 /* SecondViewController.m in Sources */,
-				95FC124C26C93F6F0003C5C7 /* KGViewController.m in Sources */,
-				95FC124826C93F6E0003C5C7 /* NoneFullScreenGestureViewController.m in Sources */,
+				95FC124726C93F6E0003C5C7 /* BaseTabBarViewController.m in Sources */,
 				95FC124926C93F6E0003C5C7 /* BaseViewController.m in Sources */,
+				95FC125026C93F6F0003C5C7 /* ExampleItem.m in Sources */,
+				95FC124B26C93F6F0003C5C7 /* HideNavigationBarViewController.m in Sources */,
 				6003F59E195388D20070C39A /* KGAppDelegate.m in Sources */,
 				95FC124F26C93F6F0003C5C7 /* KGNavigationController.m in Sources */,
-				95FC124E26C93F6F0003C5C7 /* ThirdViewController.m in Sources */,
-				95FC124A26C93F6E0003C5C7 /* NoneEdgePopGestureViewController.m in Sources */,
-				95FC125026C93F6F0003C5C7 /* ExampleItem.m in Sources */,
+				95FC124C26C93F6F0003C5C7 /* KGViewController.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
-				95FC124B26C93F6F0003C5C7 /* HideNavigationBarViewController.m in Sources */,
-				95FC124726C93F6E0003C5C7 /* BaseTabBarViewController.m in Sources */,
+				95FC124A26C93F6E0003C5C7 /* NoneEdgePopGestureViewController.m in Sources */,
+				95FC124826C93F6E0003C5C7 /* NoneFullScreenGestureViewController.m in Sources */,
+				95B7501326E5BB39004E7684 /* PresentStyleViewController.m in Sources */,
+				95FC124D26C93F6F0003C5C7 /* SecondViewController.m in Sources */,
+				95FC124E26C93F6F0003C5C7 /* ThirdViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

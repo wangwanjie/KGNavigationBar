@@ -109,6 +109,14 @@ NSString *const KGViewControllerPropertyChangedNotification = @"KGViewController
     return [objc_getAssociatedObject(self, _cmd) boolValue];
 }
 
+- (BOOL)kg_isPresentStylePush {
+    return [objc_getAssociatedObject(self, _cmd) boolValue];
+}
+
+- (void)setKg_isPresentStylePush:(BOOL)kg_isPresentStylePush {
+    objc_setAssociatedObject(self, @selector(kg_isPresentStylePush), @(kg_isPresentStylePush), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
 - (void)setKg_maxPopDistance:(CGFloat)kg_maxPopDistance {
     objc_setAssociatedObject(self, @selector(kg_maxPopDistance), @(kg_maxPopDistance), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     [self postPropertyChangeNotification];

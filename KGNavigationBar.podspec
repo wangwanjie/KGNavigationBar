@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'KGNavigationBar'
-  s.version          = '0.3.21'
+  s.version          = '0.3.23'
   s.summary          = 'iOS 导航栏一对一管理，界面转场动画，手势 Pop 退出界面'
 
   s.description      = <<-DESC

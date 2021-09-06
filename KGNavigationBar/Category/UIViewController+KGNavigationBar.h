@@ -64,6 +64,9 @@ UIKIT_EXTERN NSString *const KGViewControllerPropertyChangedNotification;
 /// 右滑pop代理，如果设置了kg_popDelegate，原来的滑动返回手势将失效
 @property (nonatomic, weak) id<KGViewControllerPopDelegate> kg_popDelegate;
 
+/// 是否 Present 样式入栈、出栈
+@property (nonatomic, assign) BOOL kg_isPresentStylePush;
+
 /// 用于根据导航栏样式自动设置状态栏风格
 - (void)kg_autoUpdateStatusBarStyle:(UIStatusBarStyle)style;
 

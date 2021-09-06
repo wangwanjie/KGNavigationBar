@@ -51,7 +51,7 @@ CG_INLINE CGFloat kg_statusBarHeight(void) {
 /// 是否 iPhone X 系列屏幕
 CG_INLINE BOOL ks_isIphoneXSeries(void) { return kg_statusBarHeight() > 20; }
 
-CG_INLINE CGFloat KGSafeAreaBottomHeight(void) {
+CG_INLINE CGFloat kg_safeAreaBottomHeight(void) {
     CGFloat bottom = 0;
     if (@available(iOS 11.0, *)) {
         bottom = UIApplication.sharedApplication.delegate.window.safeAreaInsets.bottom;

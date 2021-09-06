@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 @class ExampleItem;
 
 @interface BaseTabBarViewController : UITabBarController
-- (instancetype)initWithModel:(ExampleItem *)item NS_DESIGNATED_INITIALIZER;
+- (instancetype)initWithModel:(ExampleItem *)item;
 @end
 
 NS_ASSUME_NONNULL_END
