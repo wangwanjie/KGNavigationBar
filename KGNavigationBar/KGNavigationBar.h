@@ -2,7 +2,7 @@
 //  KGNavigationBar.h
 //  KGNavigationBar
 //
-//  Created by VanJay on 2021/09/06 10:58.
+//  Created by VanJay on 2021/09/06 11:18.
 //  Copyright © 2021 wangwanjie. All rights reserved.
 //  This file is generated automatically.
 
