@@ -46,6 +46,7 @@ pod 'KGNavigationBar'
 - [x] 支持 UITabBar 高度变化
 - [x] 适配刘海屏
 - [x] 像使用系统 navigationItem 一样使用 kg_navigationItem
+- [x] 支持页面以 Present 样式进栈出栈
 
 ## Getting Started
 
