@@ -112,8 +112,8 @@ self.kg_fullScreenPopDisabled = true;
 ## Star History
 
 <p align="center">
-  <a href="https://star-history.com/#Torantulino/auto-gpt&Date">
-    <img src="https://api.star-history.com/svg?repos=Torantulino/auto-gpt&type=Date" alt="Star History Chart">
+  <a href="https://star-history.com/#wangwanjie/KGNavigationBar&Date">
+    <img src="https://api.star-history.com/svg?repos=wangwanjie/KGNavigationBar&type=Date" alt="Star History Chart">
   </a>
 </p>
 
