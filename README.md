@@ -109,6 +109,14 @@ self.kg_fullScreenPopDisabled = true;
 ![Example](Snapshot/4.gif)
 ![Example](Snapshot/5.gif)
 
+## Star History
+
+<p align="center">
+  <a href="https://star-history.com/#Torantulino/auto-gpt&Date">
+    <img src="https://api.star-history.com/svg?repos=Torantulino/auto-gpt&type=Date" alt="Star History Chart">
+  </a>
+</p>
+
 
 ## Author
 
