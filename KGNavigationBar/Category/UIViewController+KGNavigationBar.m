@@ -301,10 +301,10 @@ NSString *const KGViewControllerPropertyChangedNotification = @"KGViewController
     KGCustomNavigationBar *navigationBar = objc_getAssociatedObject(self, _cmd);
     if (!navigationBar) {
         navigationBar = [[KGCustomNavigationBar alloc] init];
+        self.kg_navigationBar = navigationBar;
 
         [self.view addSubview:navigationBar];
         self.kg_NavBarInit = YES;
-        self.kg_navigationBar = navigationBar;
 
         // 设置默认 UI
         [self setKg_navBackgroundColor:self.kg_navBackgroundColor];

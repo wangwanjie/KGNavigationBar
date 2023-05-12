@@ -117,6 +117,8 @@
             }
             if (isToVCShowTabbar) {
                 self.fromViewController.tabBarController.tabBar.hidden = false;
+            } else {
+                self.toViewController.tabBarController.tabBar.hidden = true;
             }
             if (isScale) {
                 fromView.transform = CGAffineTransformIdentity;

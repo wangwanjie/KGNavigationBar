@@ -7,14 +7,18 @@
 
 #import <UIKit/UIKit.h>
 
+/// 转场动画时长
 extern const NSTimeInterval KGUINavigationControllerHideShowBarDuration;
 
 /// 导航栏间距，用于不同控制器之间的间距
 extern const CGFloat KGNavigationBarItemSpace;
 
-/// 使用static inline 创建静态内联函数，方便调用，新方法默认自带前缀 kg_
+/// 使用 static inline 创建静态内联函数，方便调用，新方法默认自带前缀 kg_
 void kg_swizzled_instanceMethod(Class _Nonnull oldClass, NSString *_Nonnull oldSelector, Class _Nonnull newClass);
 
+/// 交换方法
+/// @param targetClass 目标类
+/// @param targetSelector 目标方法
 BOOL kg_overrideImplementation(Class _Nonnull targetClass, SEL _Nonnull targetSelector, id _Nonnull (^_Nonnull implementationBlock)(Class _Nonnull originClass, SEL _Nonnull originCMD, IMP _Nonnull originIMP));
 
 /// 设备版本号，只获取到第二级的版本号，例如 10.3.1 只会获取到10.3
@@ -22,10 +26,12 @@ CG_INLINE double kg_navigationBarDeviceVersion(void) {
     return [UIDevice currentDevice].systemVersion.doubleValue;
 }
 
+/// 屏幕宽度
 CG_INLINE CGFloat kg_navigationBarScreenWidth() {
     return [UIScreen mainScreen].bounds.size.width;
 }
 
+/// 屏幕高度
 CG_INLINE CGFloat kg_navigationBarScreenHeight() {
     return [UIScreen mainScreen].bounds.size.height;
 }
@@ -51,6 +57,7 @@ CG_INLINE CGFloat kg_statusBarHeight(void) {
 /// 是否 iPhone X 系列屏幕
 CG_INLINE BOOL ks_isIphoneXSeries(void) { return kg_statusBarHeight() > 20; }
 
+/// 屏幕底部布局安全距离
 CG_INLINE CGFloat kg_safeAreaBottomHeight(void) {
     CGFloat bottom = 0;
     if (@available(iOS 11.0, *)) {

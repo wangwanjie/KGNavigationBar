@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 UIKIT_EXTERN NSString *const KGViewControllerPropertyChangedNotification;
 
-// 左滑push代理
+/// 左滑push代理
 @protocol KGViewControllerPushDelegate <NSObject>
 
 @optional
@@ -21,7 +21,7 @@ UIKIT_EXTERN NSString *const KGViewControllerPropertyChangedNotification;
 
 @end
 
-// 右滑pop代理
+/// 右滑pop代理
 @protocol KGViewControllerPopDelegate <NSObject>
 
 @optional
@@ -74,7 +74,7 @@ UIKIT_EXTERN NSString *const KGViewControllerPropertyChangedNotification;
 /// @param sender sender
 - (void)kg_backItemClick:(UIBarButtonItem *)sender;
 
-/// 处理枚举兼容 iOS 13
+/// 处理枚举兼容 iOS 13 以上系统
 /// @param style 状态栏样式
 - (UIStatusBarStyle)kg_fixedStatusBarStyle:(UIStatusBarStyle)style;
 
