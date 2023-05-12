@@ -67,7 +67,11 @@
     }
     // 设置toViewController
     CGRect toViewFrame = [self safeFrameWithRect:toView.frame];
-    toViewFrame.origin.x = CGRectGetWidth(toViewFrame);
+    if (self.toViewController.kg_isPresentStylePush) {
+        toViewFrame.origin.y = CGRectGetHeight(toViewFrame);
+    } else {
+        toViewFrame.origin.x = CGRectGetWidth(toViewFrame);
+    }
     toView.frame = toViewFrame;
     toView.layer.shadowColor = [UIColor blackColor].CGColor;
     toView.layer.shadowOpacity = 0.6f;
@@ -84,7 +88,11 @@
                 fromView.transform = transform;
             } else {
                 CGRect fromViewFrame = [self safeFrameWithRect:fromView.frame];
-                fromViewFrame.origin.x = -0.3 * CGRectGetWidth(fromViewFrame);
+                if (self.toViewController.kg_isPresentStylePush) {
+                    fromViewFrame.origin.y = -0.3 * CGRectGetHeight(fromViewFrame);
+                } else {
+                    fromViewFrame.origin.x = -0.3 * CGRectGetWidth(fromViewFrame);
+                }
                 fromView.frame = fromViewFrame;
             }
             CGRect toViewFrame = [self safeFrameWithRect:toView.frame];
@@ -92,7 +100,11 @@
             if (CGRectIsEmpty(toViewFrame)) {
                 toViewFrame = CGRectMake(0, 0, kg_navigationBarScreenWidth(), kg_navigationBarScreenHeight());
             }
-            toViewFrame.origin.x = 0;
+            if (self.toViewController.kg_isPresentStylePush) {
+                toViewFrame.origin.y = 0;
+            } else {
+                toViewFrame.origin.x = 0;
+            }
             toView.frame = toViewFrame;
         }
         completion:^(BOOL finished) {
@@ -105,6 +117,8 @@
             }
             if (isToVCShowTabbar) {
                 self.fromViewController.tabBarController.tabBar.hidden = false;
+            } else {
+                self.toViewController.tabBarController.tabBar.hidden = true;
             }
             if (isScale) {
                 fromView.transform = CGAffineTransformIdentity;

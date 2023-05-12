@@ -59,7 +59,11 @@
         toView.transform = scaleTransform;
     } else {
         CGRect toViewFrame = [self safeFrameWithRect:toView.frame];
-        toViewFrame.origin.x = -0.3 * CGRectGetWidth(toViewFrame);
+        if (self.fromViewController.kg_isPresentStylePush) {
+            toViewFrame.origin.y = -0.3 * CGRectGetHeight(toViewFrame);
+        } else {
+            toViewFrame.origin.x = -0.3 * CGRectGetWidth(toViewFrame);
+        }
         toView.frame = toViewFrame;
     }
     fromView.layer.shadowColor = [UIColor blackColor].CGColor;
@@ -82,7 +86,11 @@
     [UIView animateWithDuration:[self transitionDuration:self.transitionContext]
         animations:^{
             CGRect fromViewFrame = [self safeFrameWithRect:fromView.frame];
-            fromViewFrame.origin.x = CGRectGetWidth(fromViewFrame);
+            if (self.fromViewController.kg_isPresentStylePush) {
+                fromViewFrame.origin.y = CGRectGetHeight(fromViewFrame);
+            } else {
+                fromViewFrame.origin.x = CGRectGetWidth(fromViewFrame);
+            }
             fromView.frame = fromViewFrame;
 
             if (shadowView) {
@@ -92,7 +100,11 @@
                 toView.transform = CGAffineTransformIdentity;
             } else {
                 CGRect toViewFrame = [self safeFrameWithRect:toView.frame];
-                toViewFrame.origin.x = 0;
+                if (self.fromViewController.kg_isPresentStylePush) {
+                    toViewFrame.origin.y = 0;
+                } else {
+                    toViewFrame.origin.x = 0;
+                }
                 toView.frame = toViewFrame;
             }
         }
@@ -106,6 +118,8 @@
             }
             if (isToVCShowTabbar) {
                 self.toViewController.tabBarController.tabBar.hidden = false;
+            } else {
+                self.toViewController.tabBarController.tabBar.hidden = true;
             }
             if (isScale) {
                 toView.transform = CGAffineTransformIdentity;

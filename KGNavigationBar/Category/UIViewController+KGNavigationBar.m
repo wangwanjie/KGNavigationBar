@@ -109,6 +109,14 @@ NSString *const KGViewControllerPropertyChangedNotification = @"KGViewController
     return [objc_getAssociatedObject(self, _cmd) boolValue];
 }
 
+- (BOOL)kg_isPresentStylePush {
+    return [objc_getAssociatedObject(self, _cmd) boolValue];
+}
+
+- (void)setKg_isPresentStylePush:(BOOL)kg_isPresentStylePush {
+    objc_setAssociatedObject(self, @selector(kg_isPresentStylePush), @(kg_isPresentStylePush), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
 - (void)setKg_maxPopDistance:(CGFloat)kg_maxPopDistance {
     objc_setAssociatedObject(self, @selector(kg_maxPopDistance), @(kg_maxPopDistance), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     [self postPropertyChangeNotification];
@@ -293,10 +301,10 @@ NSString *const KGViewControllerPropertyChangedNotification = @"KGViewController
     KGCustomNavigationBar *navigationBar = objc_getAssociatedObject(self, _cmd);
     if (!navigationBar) {
         navigationBar = [[KGCustomNavigationBar alloc] init];
+        self.kg_navigationBar = navigationBar;
 
         [self.view addSubview:navigationBar];
         self.kg_NavBarInit = YES;
-        self.kg_navigationBar = navigationBar;
 
         // 设置默认 UI
         [self setKg_navBackgroundColor:self.kg_navBackgroundColor];

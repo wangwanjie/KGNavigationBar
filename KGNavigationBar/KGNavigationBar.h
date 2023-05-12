@@ -2,8 +2,8 @@
 //  KGNavigationBar.h
 //  KGNavigationBar
 //
-//  Created by VanJay on 2021/08/15 21:58.
-//  Copyright © 2021 wangwanjie. All rights reserved.
+//  Created by VanJay on 2023/05/12 20:48.
+//  Copyright © 2023 wangwanjie. All rights reserved.
 //  This file is generated automatically.
 
 #ifndef KGNavigationBar_h
@@ -12,7 +12,7 @@
 #import <UIKit/UIKit.h>
 
 /// 版本号
-static NSString *const KGNavigationBar_VERSION = @"0.3.21";
+static NSString *const KGNavigationBar_VERSION = @"0.3.30";
 
 #if __has_include("UIImage+KGNavigationBar.h")
 #import "UIImage+KGNavigationBar.h"
